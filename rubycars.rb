@@ -1,14 +1,14 @@
-puts "What is make"
+puts "What is make?"
 make = gets
-puts "What is model"
+puts "What is model?"
 model = gets
-puts "What is year"
+puts "What is year?"
 year = gets
-puts "What is mileage"
+puts "What is mileage?"
 mileage = gets
-puts "What is color"
+puts "What is color?"
 color = gets
+puts "What is price?"
+price = gets
 puts ""
-puts "#{make} #{model} #{year} #{mileage} #{color}"
-
-
+puts "#{make} #{model} #{year} #{mileage} #{color} $#{price}"
