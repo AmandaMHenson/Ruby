@@ -11,4 +11,4 @@ color = gets
 puts "What is price?"
 price = gets
 puts ""
-puts "#{make} #{model} #{year} #{mileage} #{color} $#{price}"
+puts "#{make}#{model}#{year}#{mileage}#{color}$#{price}"
