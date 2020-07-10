@@ -4,8 +4,8 @@ def car_question(description)
     input
 end
 
-def format_price(amount)
-   "$#{amount}" 
+def format_price(asking_price)
+   "$#{asking_price}" 
 end 
 
 def add_commas(num_string)
@@ -15,8 +15,9 @@ def add_commas(num_string)
 make = car_question("make")
 model = car_question("model")
 year = car_question("year")
+color = car_question("color")
 mileage = add_commas(car_question("mileage"))
-amount = car_question("amount")
+asking_price = car_question("asking_price")
 
 puts ""
-puts " #{make.capitalize}\n #{model.capitalize}\n #{year} \n #{mileage}\n #{format_price(amount)}"
+puts " #{make.capitalize}\n #{model.capitalize}\n #{year} \n #{color} \n #{mileage}\n #{format_price(asking_price)}"
