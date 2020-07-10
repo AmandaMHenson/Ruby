@@ -20,4 +20,4 @@ mileage = add_commas(car_question("mileage"))
 asking_price = car_question("asking_price")
 
 puts ""
-puts " #{make.capitalize}\n #{model.capitalize}\n #{year} \n #{color} \n #{mileage}\n #{format_price(asking_price)}"
+puts " #{make.capitalize}\n #{model.capitalize}\n #{year} \n #{color.upcase} \n #{mileage}\n #{format_price(asking_price)}"
