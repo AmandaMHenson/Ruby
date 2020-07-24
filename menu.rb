@@ -47,3 +47,4 @@ end
 # sort by price
 # sort by brand/make
 # assign inventory number
+# fix delete vehicle on menu and inventory
