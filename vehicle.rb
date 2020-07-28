@@ -1,7 +1,7 @@
 require_relative "format"
 class Vehicle 
  
-    attr_reader :make, :model, :year, :color, ;body_style
+    attr_reader :make, :model, :year, :color, :body_style
     attr_writer :mileage, :asking_price
   
     def initialize (make, model, year, color, body_style, mileage, asking_price)
