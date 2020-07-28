@@ -11,16 +11,11 @@ class Inventory
     @vehicles.push(new_vehicle)
   end
   
-  def delete_vehicle(vehicle)
-    @vehicles.pop()  
-  end
-
   def display_vehicles
     puts "This is the current inventory:"
     @vehicles.each do |vehicle|
       puts vehicle
-    end 
-      
+    end   
   end
 end
 
