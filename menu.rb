@@ -3,13 +3,14 @@ require_relative 'vehicle'
 
 class Menu
     # create new menu object
-    def initialize(inventory)
+    def initialize(inventory, dealer_name)
         @inventory = inventory 
+        @dealer_name = dealer_name
         # Get access to inventory
     end
     
-    def prompt_user(dealer_name = "this place")
-        puts "Welcome to #{dealer_name}. How can I help you?"
+    def prompt_user
+        puts "Welcome to #{@dealer_name}. How can I help you?"
         puts "1. Check inventory. \n2. Add new vehicle. \n3. Delete Vehicle. \n4. Exit"
         
         response = gets.chomp
@@ -36,13 +37,16 @@ class Menu
             #@inventory.delete_vehicle(vehicle)
         #end
 
-        # else if response equals 4 do this
-            # exit
-        # else response equals nonsense do this
-            # I don't know what that means. Try again fool!
+        if response == "4" 
+            puts "Goodbye"
+            exit
+        end 
+
+        #else 
+            #puts "I don't know what that means. Try again fool!"
+        #end
     end
 end
-
 # -- Inventory class
 # sort by price
 # sort by brand/make
