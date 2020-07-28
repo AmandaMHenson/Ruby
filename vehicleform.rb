@@ -7,7 +7,7 @@ class VehicleForm
      @make = car_detail("make")
      @model = car_detail("model")
      @year = car_detail("year")
-     @body_style = body_style ("body style")
+     @body_style = car_detail ("body style")
      @color = car_detail("color")
      @mileage = car_detail("mileage")
      @asking_price = car_detail("asking_price")
