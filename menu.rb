@@ -70,6 +70,7 @@ class Menu
         
         else 
             puts "\nI don't know what that means. Try again fool!"
+            inventory_prompt
         end
     end
 end
