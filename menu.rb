@@ -10,45 +10,68 @@ class Menu
     end
     
     def prompt_user
-        puts "Welcome to #{@dealer_name}. How can I help you?"
-        puts "1. Check inventory. \n2. Add new vehicle. \n3. Delete Vehicle. \n4. Exit"
+        puts "\nWelcome to #{@dealer_name}. How can I help you?"
+        puts "\n1. Check inventory. \n2. Add new vehicle. \n3. Delete Vehicle. \n4. Exit"
         
         response = gets.chomp
         direct_response(response)
     end
     
     def direct_response(response)
-        puts "You chose #{response}."
+        puts "\nYou chose #{response}."
+        
         if response == "1" 
-            puts "Checking Inventory"
-            @inventory.display_vehicles
-        end
-
-        if response == "2"
-            puts "Adding New Vehicle"
+            puts "\nChecking Inventory"
+            inventory_prompt
+                    
+        elsif response == "2"
+            puts "\nAdding New Vehicle"
             vehicle = VehicleForm.new.description
             @inventory.add_vehicle(vehicle)
             puts vehicle
-        end
-
-        #if response == "3"
+        
+        elsif response == "4" 
+            puts "\nGoodbye"
+            exit
+        
+        
+        #elsif response == "3"
             #puts "Deleting vehicle"
             #vehicle = VehicleForm.new.description
             #@inventory.delete_vehicle(vehicle)
-        #end
 
-        if response == "4" 
-            puts "Goodbye"
-            exit
-        end 
+        else 
+            puts "\nI don't know what that means. Try again fool!"
+        end
 
-        #else 
-            #puts "I don't know what that means. Try again fool!"
-        #end
+    end
+
+    def inventory_prompt
+        puts "\na. All inventory \nb.Sort by: vehicle body style \nc.Sort by: price \nd.Back to main menu"
+
+        iresponse= gets.chomp.downcase
+
+        puts "\nYou chose #{iresponse}."
+        
+        if iresponse == "a" 
+            puts "\nDisplaying All Inventory:"
+            @inventory.display_vehicles
+                    
+        elsif iresponse == "b"
+            puts "\nDisplaying inventory by body style:"
+            @inventory.display_body_style
+                   
+        elsif iresponse == "c"
+            puts "\nDisplaying inventory by price:"
+            @inventory.display_price
+
+        elsif iresponse == "d" 
+            puts "Returning to Main Menu"
+        
+        else 
+            puts "\nI don't know what that means. Try again fool!"
+        end
     end
 end
-# -- Inventory class
-# sort by price
-# sort by brand/make
-# assign inventory number
+
 # fix delete vehicle on menu and inventory

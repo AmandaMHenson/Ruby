@@ -1,8 +1,7 @@
 require_relative "format"
 class Vehicle 
  
-    attr_reader :make, :model, :year, :color, :body_style
-    attr_writer :mileage, :asking_price
+    attr_accessor :make, :model, :year, :color, :body_style, :mileage, :asking_price
   
     def initialize (make, model, year, color, body_style, mileage, asking_price)
       @make = make.capitalize
@@ -15,6 +14,12 @@ class Vehicle
       end
 
     def to_s
-      "Vehicle is a #{@year} #{@make} #{@model} #{@body_style} (#{@color}) with #{Format.add_commas(@mileage)} miles valued at #{Format.num_to_currency(@asking_price)}."
+      "\nVehicle is a #{@year} #{@make} #{@model} #{@body_style} (#{@color}) with #{Format.add_commas(@mileage)} miles valued at #{Format.num_to_currency(@asking_price)}."
+    end
+
+    def <=>(other_vehicle)
+      @make<=>other_vehicle.make
+      @asking_price <=> other_vehicle.asking_price
+      @body_style <=> other_vehicle.body_style
     end
   end

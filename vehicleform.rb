@@ -10,12 +10,12 @@ class VehicleForm
      @body_style = car_detail ("body style")
      @color = car_detail("color")
      @mileage = car_detail("mileage")
-     @asking_price = car_detail("asking_price")
+     @asking_price = car_detail("asking price")
      create_vehicle
     end
   
     def car_detail(description)
-      puts "What is #{description}?"
+      puts "\nWhat is #{description}?"
       input = gets.chomp
       input
     end
